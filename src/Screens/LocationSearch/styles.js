@@ -1,10 +1,20 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    height: '100%',
-    backgroundColor: 'white',
+  locationSearchBtn: {
+    backgroundColor: '#fff',
+    height: 40,
+    width: Dimensions.get('screen').width - 50,
+    borderRadius: 20,
+    borderWidth: 3,
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  locationSearchText:{
+    fontWeight: 'bold',
+    fontSize: 10,
   },
 });
 

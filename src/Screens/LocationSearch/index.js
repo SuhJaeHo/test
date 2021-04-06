@@ -1,22 +1,17 @@
 import React from 'react';
 import {View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
-import styles from './styles';
-
-const LocationSearch = (props) => {
-    
-    const navigation = useNavigation();
-    
+const LocationSearch = (props) => {   
     return (
-        <View style={styles.container}>
+        <View style={{width: '100%', height: '100%'}}>
             <GooglePlacesAutocomplete
                 placeholder='Search'
+                autoFocus={true}                
                 fetchDetails={true}
                 onPress={(data, details = null) => {
-                    navigation.push('Main', {lat: details.geometry.location.lat, lng: details.geometry.location.lng, address: data.description})
+                    props.notifyChange(details.geometry.location);                
                 }}
                 query={{
                     key: 'AIzaSyBMk4s9KTSOS2IICXgJ8jQQAeITjx8f3fE',
